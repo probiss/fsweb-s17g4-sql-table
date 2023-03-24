@@ -77,7 +77,7 @@ Aşağıda tablolar ve şemaları verilmiş.
 
 #### Görev 3: 
 
-[ ] veriler.sql içindeki hataları düzelterek, verileri veritabanınıza ekleyiniz.
+[x] veriler.sql içindeki hataları düzelterek, verileri veritabanınıza ekleyiniz.
 
 
 ##### Görev 4: 
@@ -86,6 +86,7 @@ Aşağıda tablolar ve şemaları verilmiş.
 
    1- öğrenci tablosuna 'sehir' alanı ekleyiniz.
 
+   
 
    2- tablolarda veri olarak tarih geçen alanlarda veri tipini string yerine DateTime olarak ayarlayınız.
 

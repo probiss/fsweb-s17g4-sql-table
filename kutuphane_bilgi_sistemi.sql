@@ -1,6 +1,6 @@
 -- SQL ifadelerinizi buraya yazınız.
 CREATE TABLE `ogrenci`(
-    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `ogrno` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `ad` VARCHAR(100) NOT NULL,
     `soyad` VARCHAR(100) NOT NULL,
     `dtarih` VARCHAR(100) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE `ogrenci`(
 ALTER TABLE
     `ogrenci` ADD PRIMARY KEY `ogrenci_id_primary`(`id`);
 CREATE TABLE `islem`(
-    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `islemno` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `ogrenci_id` INT NOT NULL,
     `kitap_id` INT NOT NULL,
     `atarih` VARCHAR(100) NOT NULL,
@@ -24,14 +24,14 @@ ALTER TABLE
 ALTER TABLE
     `islem` ADD UNIQUE `islem_kitap_id_unique`(`kitap_id`);
 CREATE TABLE `yazar`(
-    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `yazarno` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `ad` VARCHAR(100) NOT NULL,
     `soyad` VARCHAR(100) NOT NULL
 );
 ALTER TABLE
     `yazar` ADD PRIMARY KEY `yazar_id_primary`(`id`);
 CREATE TABLE `kitap`(
-    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `kitapno` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `ad` VARCHAR(300) NOT NULL,
     `sayfasayisi` INT UNSIGNED NOT NULL,
     `puan` INT UNSIGNED NOT NULL,
@@ -45,7 +45,7 @@ ALTER TABLE
 ALTER TABLE
     `kitap` ADD UNIQUE `kitap_tur_id_unique`(`tur_id`);
 CREATE TABLE `tur`(
-    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `turno` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `ad` VARCHAR(100) NOT NULL
 );
 ALTER TABLE
