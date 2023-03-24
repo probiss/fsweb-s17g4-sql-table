@@ -82,39 +82,61 @@ Aşağıda tablolar ve şemaları verilmiş.
 
 ##### Görev 4: 
 
-[ ] Aşağıda istenen değişiklikleri tablolarda yapacak SQL ifadeleri yazınız.
+[x] Aşağıda istenen değişiklikleri tablolarda yapacak SQL ifadeleri yazınız.
 
    1- öğrenci tablosuna 'sehir' alanı ekleyiniz.
 
-   
+   alter table ogrenci add column sehir varchar(45) not null
 
    2- tablolarda veri olarak tarih geçen alanlarda veri tipini string yerine DateTime olarak ayarlayınız.
+
+   Alter Table `ogrenci` Change Column `dtarih` `dtarih` DATETIME NOT NULL;
+   Alter Table `islem` Change Column `atarih` `atarih` DATETIME NOT NULL;
+   Alter Table `islem` Change Column `vtarih` `vtarih` DATETIME NOT NULL;
 
 
    3- öğrenci tablosuna 'dogum_yeri' alanı ekleyiniz ve default değerini 'Türkiye' yapınız.
 
+      alter table ogrenci add column dogum_yeri varchar(50) not null default "Türkiye"
 
    4- öğrenci tablosundan 'puan' alanını siliniz.
 
+      ALTER TABLE ogrenci DROP COLUMN puan
 
    5- öğrenciler tablosundaki kiz öğrencileri alarak kiz_ogrenciler tablosu oluşturunuz.
-   
+
+      CREATE TABLE kiz_ogrenciler AS
+      (SELECT * FROM ogrenci WHERE cinsiyet = 'K');
    
    6- kiz_ogrenciler tablosunu siliniz.
 
+      Drop Table kiz_ogrenciler
 
    7- kiz_yurdu tablosu oluşturunuz(sadece 'ad' alanı olsun). 1 kayıt ekleyiniz.
       öğrenci tablosundaki kız öğrencileri kullanarak kiz_yurdunda_kalanlar tablosu oluşturunuz
 
+      CREATE TABLE kiz_yurdu (ad VARCHAR(50));
+      INSERT INTO kiz_yurdu (ad) VALUES ('Arife');
+
+           CREATE TABLE kiz_yurdunda_kalanlar AS
+           SELECT * FROM ogrenci
+           WHERE cinsiyet = 'K';
 
    8- kiz_ogrenciler tablosunun adını kogrenciler olarak değiştiriniz
 
+      RENAME TABLE kiz_ogrenciler TO kogrenciler;
 
    9- yazar tablosundaki 'ad' alanının adını 'name' olarak güncelleyiniz.
 
+      ALTER TABLE yazar RENAME COLUMN ad TO name;
 
    10- yazar tablosuna 'ulke' ve 'universite' alanları ekleyiniz 'ulke'nin default değeri 'Türkiye' olsun.
 
+      alter table yazar add column ulke varchar(20) not null default "Türkiye", add column universite varchar(100)
 
    11- tablo ilişkilerine 5'er tane örnek veriniz (1-1, 1-n, n-n)  
+
+   one-to-one => kitap_ad-kitap_id,araba-sigorta,vatandaş-tc,vatandaş-sicilno,araba-şaseno
+   one-to-many => ogrenci-okul, kitap-kitap islem, kitap-yazar, sipariş urun,araba-bayi
+   many-to-many =>vatandaş-vatandaşlık, film-kategori,kitap kategori,ögrenci ders,ögrenci ögretmen
 
