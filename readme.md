@@ -72,7 +72,7 @@ Aşağıda tablolar ve şemaları verilmiş.
 
 ### Görev 2: SQL İfadeleri
 
-[ ] Görev 1'de tasarımını yaptığınız tabloları DB'de oluşturan komutları kutuphane_bilgi_sistemi.sql dosyasında oluşturunuz.
+[x] Görev 1'de tasarımını yaptığınız tabloları DB'de oluşturan komutları kutuphane_bilgi_sistemi.sql dosyasında oluşturunuz.
 
 
 #### Görev 3: 
