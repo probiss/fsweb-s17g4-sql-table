@@ -5,7 +5,7 @@
 -- Tablo döküm verisi `islem`
 --
 
-INSERT INTO `islem` (`islemno`, `ogrenci_id`, `kitap_id`, `atarih`, `vtarih`) VALUES
+INSERT INTO `islem`  (`islemno`, `ogrenci_id`, `kitap_id`, `atarih`, `vtarih`) VALUES
 (1, 73, 10, '2006-01-01 00:00:00', '2006-01-17 00:00:00'),
 (2, 6, 17, '2006-01-02 00:00:00', '2006-01-07 00:00:00'),
 (3, 59, 11, '2006-01-03 00:00:00', '2006-01-06 00:00:00'),

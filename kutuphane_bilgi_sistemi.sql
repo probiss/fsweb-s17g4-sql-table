@@ -9,7 +9,7 @@ CREATE TABLE `ogrenci`(
     `puan` INT UNSIGNED NOT NULL
 );
 ALTER TABLE
-    `ogrenci` ADD PRIMARY KEY `ogrenci_id_primary`(`id`);
+    `ogrenci`  ADD PRIMARY KEY `ogrenci_id_primary`(`id`);
 CREATE TABLE `islem`(
     `islemno` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `ogrenci_id` INT NOT NULL,
@@ -18,9 +18,9 @@ CREATE TABLE `islem`(
     `vtarih` VARCHAR(100) NOT NULL
 );
 ALTER TABLE
-    `islem` ADD PRIMARY KEY `islem_id_primary`(`id`);
+    `islem`  ADD PRIMARY KEY `islem_id_primary`(`id`);
 ALTER TABLE
-    `islem` ADD UNIQUE `islem_ogrenci_id_unique`(`ogrenci_id`);
+    `islem`  ADD UNIQUE `islem_ogrenci_id_unique`(`ogrenci_id`);
 ALTER TABLE
     `islem` ADD UNIQUE `islem_kitap_id_unique`(`kitap_id`);
 CREATE TABLE `yazar`(
